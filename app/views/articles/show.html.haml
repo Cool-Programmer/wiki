@@ -1,0 +1,14 @@
+%h1
+  = @article.title
+%p
+  = @article.content
+%p.small.text-muted
+  Published:
+  = @article.created_at.strftime('%B %e at %l:%M')
+  %br/
+  Last Updated:
+  = @article.updated_at.strftime('%B %e at %l:%M')
+
+= link_to 'Go Back', root_path
+= link_to 'Edit', edit_article_path(@article)
+= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }
