@@ -18,8 +18,9 @@
             = link_to 'Wikipedia', root_path
         .collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to 'Add New Article', new_article_path
+            - if user_signed_in?
+              %li
+                = link_to 'Add New Article', new_article_path
     .container
       %p.notice
         = notice
